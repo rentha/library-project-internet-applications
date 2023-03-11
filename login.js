@@ -14,7 +14,7 @@ function login(event) {
   const user = users.find(user => user.username === username && user.password === password);
 
   if (user) {
-    window.location.href = 'admin.html';
+    window.location.href = 'adminPanel.html';
   } else {
     alert('Incorrect username or password');
   }
