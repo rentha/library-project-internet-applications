@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteka!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="my-5">Book List</h1>
+
+      <table id="book-list" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Book 1</td>
+            <td>Author 1</td>
+            <td>Description of Book 1</td>
+            <td><button class="btn btn-primary" onclick="borrowBook('Book 1')">Borrow</button></td>
+          </tr>
+          <tr>
+            <td>Book 2</td>
+            <td>Author 2</td>
+            <td>Description of Book 2</td>
+            <td><button class="btn btn-primary" onclick="borrowBook('Book 2')">Borrow</button></td>
+          </tr>
+          <!-- Add more books here -->
+        </tbody>
+      </table>
+
+      <h2 class="my-5">Borrowed Books</h2>
+
+      <table id="borrowed-book-list" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Borrowed books will be added here -->
+        </tbody>
+      </table>
+    </div>
+	
+	<script>
+      let borrowedBooks = [];
+
+      function borrowBook(bookTitle) {
+        const bookRow = document.querySelector(`#book-list tr td:first-child`);
+        const bookTitleFromRow = bookRow.textContent;
+
+        const borrowedBook = {
+          title: bookTitleFromRow
+        };
+
+        borrowedBooks.push(borrowedBook);
+
+        const borrowedBookList = document.querySelector("#borrowed-book-list tbody");
+
+        const newRow = borrowedBookList.insertRow();
+
+        const titleCell = newRow.insertCell(0);
+        const authorCell = newRow.insertCell(1);
+        const descriptionCell = newRow.insertCell(2);
+
+        titleCell.innerHTML = bookTitleFromRow;
+        authorCell.innerHTML = "Author Name";
+        descriptionCell.innerHTML = "Book Description";
+      }
+	  
+	  
+    </script>
+
+  <script src=""></script>
+</body>
+</html>
