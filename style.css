@@ -1,58 +1,144 @@
+/* style.css */
+
 /* Global styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body {
+    background-color: #f2f2f2;
     font-family: Arial, sans-serif;
   }
   
-  /* Container styles */
-  .container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-  }
-  
-  /* Heading styles */
-  h1 {
-    margin-bottom: 20px;
+  h1, h2 {
+    color: #333;
     text-align: center;
   }
   
-  /* Form styles */
-  .form-group {
-    margin-bottom: 20px;
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  form {
+    margin: 20px auto;
+    max-width: 400px;
   }
   
   label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
   
-  input {
-    display: block;
+  input[type="text"],
+  input[type="password"] {
+    padding: 8px;
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
     border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
   }
   
-  .btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
+  button[type="submit"],
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
     border: none;
-    background-color: #007bff;
-    color: #fff;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-right: 8px;
   }
   
-  .btn:hover {
-    background-color: #0069d9;
+  button[type="submit"]:hover,
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .btn-danger {
+    background-color: #f44336;
+  }
+  
+  .btn-sm {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin: 0;
+  }
+  
+  /* Styles for index.html */
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    margin-bottom: 16px;
+  }
+  
+  .login-form button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    display: block;
+  }
+  
+  /* Styles for admin.html */
+  .admin-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-form label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .admin-form input[type="text"],
+  .admin-form input[type="password"] {
+    margin-bottom: 16px;
+  }
+  
+  .admin-form button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    display: block;
+  }
+  
+  .admin-form form {
+    margin: 0 auto;
+    max-width: 400px;
   }
   
