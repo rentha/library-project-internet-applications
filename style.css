@@ -3,14 +3,29 @@
 /* Global styles */
 body {
     background-color: #f2f2f2;
+    background-image: linear-gradient( #c0341157, #986353a2);
+    height: 100vh;
+    margin: 0;
     font-family: Arial, sans-serif;
   }
-  
-  h1, h2 {
+
+  h1, h2{
     color: #333;
     text-align: center;
+    top: 40px;
+    left: 50%;
+    background-color: #fff;
+    max-width: 400px;
+    margin: 1rem auto;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
-  
+
+  h1{
+    max-width: 100%;
+  }
+
   table {
     border-collapse: collapse;
     width: 100%;
@@ -51,7 +66,7 @@ body {
   
   button[type="submit"],
   button {
-    background-color: #4CAF50;
+    background-color:#c10f18;
     color: white;
     padding: 8px 16px;
     border: none;
@@ -62,7 +77,25 @@ body {
   
   button[type="submit"]:hover,
   button:hover {
-    background-color: #3e8e41;
+    background-color: black;
+  }
+
+  #logout-button{
+    background-color:#c10f18;
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    height: 5000;
+  }
+
+  #logout-button:hover {
+    background-color: black;
   }
   
   .btn-danger {
@@ -76,7 +109,27 @@ body {
   }
   
   /* Styles for index.html */
+  #intro-section{
+    position: relative;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .image-class {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .login-form {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
     max-width: 400px;
     margin: 0 auto;
     background-color: #fff;
@@ -88,6 +141,13 @@ body {
   .login-form h1 {
     text-align: center;
     margin-bottom: 20px;
+  }
+
+  .login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: 'Waiting for the Sunrise', cursive;
   }
   
   .login-form label {
@@ -149,7 +209,7 @@ body {
 .button-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #c10f18;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -160,5 +220,5 @@ body {
 }
 
 .button-link:hover {
-  background-color: #3e8e41;
+  background-color: black;
 }
