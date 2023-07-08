@@ -13,10 +13,11 @@ function displayBooks() {
       <td>${book.author}</td>
       <td>${book.description}</td>
       <td>${book.status}</td>
+      <td>${book.borrowedBy || ''}</td> <!-- Add borrowedBy column -->
       <td>
         ${book.status === 'Free' ? `<button onclick="reserveBook(${index})">Reserve</button>` : ''}
         ${book.status === 'Reserved' && book.reservedBy === currentUser ? `<button onclick="borrowBook(${index})">Borrow</button> <button onclick="unreserveBook(${index})">Unreserve</button>` : ''}
-        ${book.status === 'Borrowed' && book.reservedBy === currentUser ? `<button onclick="returnBook(${index})">Return</button>` : ''}
+        ${book.status === 'Borrowed' && book.borrowedBy === currentUser ? `<button onclick="returnBook(${index})">Return</button>` : ''}
       </td>
     </tr>
   `).join('');
@@ -48,6 +49,7 @@ function borrowBook(index) {
   const books = JSON.parse(localStorage.getItem('books'));
   if (books[index].reservedBy === currentUser) {
     books[index].status = 'Borrowed';
+    books[index].borrowedBy = currentUser; // Record who borrowed the book
     localStorage.setItem('books', JSON.stringify(books));
     displayBooks();
   } else {
@@ -57,9 +59,10 @@ function borrowBook(index) {
 
 function returnBook(index) {
   const books = JSON.parse(localStorage.getItem('books'));
-  if (books[index].reservedBy === currentUser) {
+  if (books[index].borrowedBy === currentUser) {
     books[index].status = 'Free';
     books[index].reservedBy = null; // Remove the reservedBy field
+    books[index].borrowedBy = null; // Remove the borrowedBy field
     localStorage.setItem('books', JSON.stringify(books));
     displayBooks();
   } else {

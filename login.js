@@ -18,6 +18,10 @@ function login(event) {
     // Save the current user to local storage
     localStorage.setItem('currentUser', username);
 
+    // Save user localization and IP into cookies
+    document.cookie = `localization=${navigator.language}`;
+    document.cookie = `ip=${getUserIP()}`;
+
     if (user.role === 'admin') {
       window.location.href = 'adminPanel.html';
     } else {
@@ -52,5 +56,19 @@ if (!userExists) {
 
 clearStorageButton.addEventListener('click', function() {
   localStorage.clear();
-  alert('Local storage cleared!');
+  // Clear cookies
+  document.cookie = 'localization=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+  document.cookie = 'ip=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+  alert('Local storage and cookies cleared!');
 });
+
+// Function to get the user's IP address
+function getUserIP() {
+  return fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => data.ip)
+    .catch(error => {
+      console.error('Error getting IP address:', error);
+      return null;
+    });
+}
