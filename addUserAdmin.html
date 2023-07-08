@@ -11,17 +11,25 @@
   <table id="user-list"></table>
 
   <h2>Add User</h2>
-  <form>
-    <label for="new-username">Username:</label>
-    <input type="text" id="new-username">
-    <label for="new-password">Password:</label>
-    <input type="password" id="new-password">
-    <button type="submit">Add User</button>
-  </form>
+<form>
+  <label for="new-username">Username:</label>
+  <input type="text" id="new-username" required>
+  <label for="new-password">Password:</label>
+  <input type="password" id="new-password" required>
+  <label for="new-role">Role:</label>
+  <select id="new-role" required>
+    <option value="">Select a role</option>
+    <option value="admin">Admin</option>
+    <option value="reader">Reader</option>
+  </select>
+  <button type="submit">Add User</button>
+</form>
+
  
   
 
   <button id="logout-button">Logout</button>
+  <button id="return-button">Return</button>
 
   <script src="adminAddUser.js"></script>
 </body>

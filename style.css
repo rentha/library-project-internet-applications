@@ -1,6 +1,3 @@
-/* style.css */
-
-/* Global styles */
 body {
     background-color: #f2f2f2;
     background-image: linear-gradient( #c0341157, #986353a2);
@@ -221,4 +218,34 @@ body {
 
 .button-link:hover {
   background-color: black;
+}
+
+.credentials-example {
+  position: relative;
+  width: 300px;
+  padding: 30px;
+  margin-top: 20px;
+  margin-left: 50px;
+  background: #f9f9f9;
+  border: 1px solid #c1c1c1;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
+  transform: rotate(-9deg);
+}
+
+.credentials-example:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 280px;
+  height: 8px;
+  border-top: 1px dashed #c1c1c1;
+  border-bottom: 1px dashed #c1c1c1;
+}
+
+.credentials-example h4 {
+  margin-top: 0;
 }
