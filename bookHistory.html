@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Book History</title>
+  <style>
+    body {
+      background-color: #000;
+      font-family: 'Courier New', monospace;
+      color: #21f600;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      padding: 10px;
+      background-color: #111;
+      border: 1px solid #21f600;
+    }
+
+    .button {
+      display: block;
+      width: 100px;
+      margin-top: 20px;
+      background-color: #21f600;
+      color: #000;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .return-button:hover {
+      background-color: #1c9900;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Book History</h1>
+  <pre id="history-text"></pre>
+  <button class="button" onclick="backo()">Return</button>
+
+  <script src="bookHistory.js"></script>
+</body>
+</html>

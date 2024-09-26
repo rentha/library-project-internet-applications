@@ -1,15 +1,90 @@
-<!-- admin.html -->
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>Admin Page</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #000;
+      font-family: 'Courier New', monospace;
+      color: #21f600;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    form {
+      width: 300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label, input, textarea, button {
+      margin-bottom: 20px;
+    }
+
+    input, textarea, button {
+      padding: 5px;
+      background: #000;
+      color: #21f600;
+      border: 1px solid #21f600;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    #book-list {
+      width: 100%;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #book-list td, #book-list th {
+      border: 1px solid #21f600;
+      padding: 8px;
+    }
+
+    #book-list th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #21f600;
+      color: #000;
+    }
+
+    #logout-button, #return-button {
+      display: block;
+      width: 100px;
+      margin: 20px auto;
+      background-color: #21f600;
+      color: #000;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #logout-button:hover, #return-button:hover {
+      background-color: #1c9900;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-
-
   <h1>My Book List</h1>
+
+  <form id="search-form">
+    <label for="search-input">Search:</label>
+    <input type="text" id="search-input">
+    <button type="submit">Search</button>
+  </form>
+
   <form id="book-form">
     <label for="title-input">Title:</label>
     <input type="text" id="title-input" required>
@@ -24,6 +99,7 @@
   </form>
 
   <button id="logout-button">Logout</button>
+  <button id="return-button">Return</button>
 
   <table id="book-list">
     <thead>
@@ -31,12 +107,12 @@
         <th>Title</th>
         <th>Author</th>
         <th>Description</th>
+        <th>Status</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
- 
 
   <script src="adminAddBook.js"></script>
 </body>

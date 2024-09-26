@@ -1,15 +1,27 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
   </head>
   <body>
+
+     <section id="intro-section"><br><div class="credentials-example">
+
+  <h4>Example Credentials:</h4>
+  <p>Admin:<br>
+     Username: Andrzej Nowak<br>
+     Password: password123</p>
+  <p>Reader:<br>
+     Username: Jan Kowaliński<br>
+     Password: password123</p>
+</div></section>
+
     <div class="login-form">
-      <h1>Library</h1>
+      <img src="rod.jpg" alt="Description of the image" class="image-class">
+      <h2>Library with attitude</h2>
       <form id="login-form">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">
@@ -17,6 +29,7 @@
         <input type="password" id="password" name="password">
         <button type="submit">Login</button>
       </form>
+      <button id="clear-storage" style="margin-top: 20px;">Clear Local Storage</button>
     </div>
     <script src="login.js"></script>
   </body>

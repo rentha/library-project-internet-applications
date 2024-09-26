@@ -1,27 +1,95 @@
-<!-- admin.html -->
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>Admin Panel</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #000;
+      font-family: 'Courier New', monospace;
+      color: #21f600;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    #user-list {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    #user-list td, #user-list th {
+      border: 1px solid #21f600;
+      padding: 8px;
+    }
+
+    #user-list th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #21f600;
+      color: #000;
+    }
+
+  .button-wrapper {
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+  }
+
+  .button-link {
+    background-color: #21f600;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .button-link:hover {
+    background-color: #1c9900;
+    color: #fff;
+  }
+
+    #logout-button {
+      display: block;
+      width: 100px;
+      margin: 20px auto;
+      background-color: #21f600;
+      color: #000;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+  </style>
 </head>
 <body>
   <h1>Admin Panel</h1>
   <table id="user-list"></table>
 
-  <h2>Add User</h2>
-	<div class="button-wrapper">
-	  <a class="button-link" href="addUserAdmin.html">Add User</a>
-	</div>
-	
-  <h2>Add Book</h2>
-	<div class="button-wrapper">
-	  <a class="button-link" href="addBookAdmin.html">Add Book</a>
-	</div>
- 
-  <button id="logout-button">Logout</button>
+  <div class="button-container">
+    <div class="button-wrapper">
+      <a class="button-link" href="addUserAdmin.html">Add User</a>
+    </div>
+
+    <div class="button-wrapper">
+      <a class="button-link" href="addBookAdmin.html">Add Book</a>
+    </div>
+  </div>
 
   <script src="admin.js"></script>
+  <button id="logout-button">Logout</button>
 </body>
+
 </html>
